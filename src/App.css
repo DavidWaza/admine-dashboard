@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+*{
+    font-family: 'Raleway', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-image: url(./img/5968949.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container{
+    padding:0;
+    margin: 0;
+    width: auto;    
+}
+.containment {
+    margin: 0 auto;
+    margin-top: 90px;
+
+
+}
+h1{
+    text-align: center;
+}
+.login{
+    padding-top: 40px;
+}
+.forms {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+input[type = text]{
+    height: 28px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    width: 300px;
+    border: .5px solid grey;
+    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+   
+   
+}
+.form-control{
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 300px;
+    height: 28px;
+    display: inline-block;
+}
+label {
+    margin-top: 30px;
+}
+.btn-primary {
+    display: block;
+    margin-top:20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 343px;
+    height: 40px;
+    background: linear-gradient(to right, rgb(192, 135, 12), rgb(55, 48, 1));
+    border:none;
+    color: white;
+    transition: all 1s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn-primary:hover{
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid rgb(55, 48, 1);
+    transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.btn-secondary {
+    background: transparent;
+    border: 2px solid goldenrod;
+    color: black;
+}
+/* .btn-secondary:hover {
+    background: linear-gradient(to right, rgb(192, 135, 12), rgb(55, 48, 1));
+} */
+.center {
+    text-align: center;
+    margin-right: 42px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import SignIn from "./components/SignIn";
+import "./App.css";
+import SignUp from "./components/SignUp";
+import Navigation from "./components/Navigation";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      input: "",
+      route: "signin",
+      isSignedIn: false,
+    };
+  }
+  onInputChange = (event) => {
+    console.log(event.target.value);
+  };
+  onButtonSubmit = () => {
+    console.log("click");
+  };
+
+    onRouteChange = (route) => {
+      if(route === 'signout') {
+        this.setState({isSignedIn: false})
+      }else if (route === 'home'){
+          this.setState({isSignedIn:true})
+      }
+      this.setState({route: route});
+    }
+
+
+  render() {
+    return (
+      <div className="App">
+        <Navigation onRouteChange={this.onRouteChange}/>
+        {this.state.route === "signin" ? (
+      
+          <SignIn
+            onButtonSubmit={this.onButtonSubmit}
+            onInputChange={this.onInputChange}
+            onRouteChange={this.onRouteChange}
+          />
+        ) : (
+          <SignUp onRouteChange={this.onRouteChange} />
+        )}
+      </div>
+    );
+  }
 }
-
 export default App;
